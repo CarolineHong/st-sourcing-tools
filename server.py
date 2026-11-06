@@ -9,7 +9,8 @@ from fastapi.responses import HTMLResponse
 app = FastAPI(title="ST 소싱 툴")
 
 INBOUND_URL = "https://dcsai.fnf.co.kr/apps/st-26f-inbound"
-INBOUND_27S_URL = INBOUND_URL + "?s=27s"  # 27S·27N 시즌 (같은 앱, 쿼리로 구분)
+# 27S·27N 시즌 (같은 앱, 쿼리로 구분). dcsai.fnf.co.kr/apps/... 셸은 쿼리/하위경로를 앱에 넘기지 않으므로 앱 도메인을 직접 사용
+INBOUND_27S_URL = "https://st-26f-inbound.apps.dcsai.fnf.co.kr/?s=27s"
 EAN_URL = "https://dcsai.fnf.co.kr/apps/st-ean-barcode"
 
 HTML = """<!DOCTYPE html>
